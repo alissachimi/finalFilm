@@ -8,4 +8,9 @@ function initAutoComplete() {
   };
   
   google.maps.event.addDomListener(window, 'load', initAutoComplete);
+
+  function redirectToMaps(){
+    const searchQuery = encodeURIComponent(document.getElementById("places-search").value);
+    window.location.href = `maps.html?location=${searchQuery}`;
+  }
   

@@ -75,7 +75,17 @@ async function hintReveal(hintTitle){
 
   await new Promise(resolve => setTimeout(resolve, 1000));
 
-  $('#' + hintTitle).text(movie.travelTime).animate();
+  if($('#' + hintTitle).text() == "Lead Actor"){
+    $('#' + hintTitle).text(movie.actor).animate();
+  }
+
+  if($('#' + hintTitle).text() == "Genre"){
+    $('#' + hintTitle).text(movie.genre).animate();
+  }
+
+  if($('#' + hintTitle).text() == "Release Year"){
+    $('#' + hintTitle).text(movie.year).animate();
+  }
 
   $('#' + hintTitle).animate({
     opacity: '1',

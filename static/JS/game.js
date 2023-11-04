@@ -1,3 +1,10 @@
+window.addEventListener('load',function(){
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src= 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCr_GiC_sLRJi7Urje8rqN5TJ-z_n8SVJQ&callback=initialize&v=weekly'
+  document.body.appendChild(script);
+});
+
 let panorama;
 let currentArrayIndex = 0;
 

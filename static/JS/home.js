@@ -1,3 +1,11 @@
+window.addEventListener('load',function(){
+
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src= 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCr_GiC_sLRJi7Urje8rqN5TJ-z_n8SVJQ&libraries=places&callback=initAutoComplete'
+  document.body.appendChild(script);
+});
+
 function initAutoComplete() {
     const input = document.getElementById("places-search");
     var autocomplete = new google.maps.places.SearchBox(input);

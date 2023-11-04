@@ -1,3 +1,10 @@
+window.addEventListener('load',function(){
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src= 'http://maps.googleapis.com/maps/api/js?key=AIzaSyCr_GiC_sLRJi7Urje8rqN5TJ-z_n8SVJQ&callback=initMap&libraries=places'
+    document.body.appendChild(script);
+  });
+
 async function rowSlideIn(rowName){
     $("#rowName").slideDown("slow");
     await new Promise(resolve => setTimeout(resolve, 300));

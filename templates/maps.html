@@ -9,12 +9,53 @@
     <link rel="stylesheet" href="static/CSS/maps.css">
     <title>Film Spots Near You</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script async src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCr_GiC_sLRJi7Urje8rqN5TJ-z_n8SVJQ&callback=initMap">
+    <script async src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCr_GiC_sLRJi7Urje8rqN5TJ-z_n8SVJQ&callback=initMap&libraries=places">
     </script>
 </head>
 
 <body>
-    <div id="map"></div>
+    <div class="grid-container">
+        <input
+        id="pac-input"
+        class="controls"
+        type="text"
+        placeholder="Search Box"
+      />
+        <div id="map" class="grid-item"></div>
+        <table id="distanceTable" class="grid-item">
+            <tr>
+                <th>Movie</th>
+                <th>Distance</th>
+                <th>Driving Time</th>
+            </tr>
+            <tr>
+                <td id="r1m"></td>
+                <td id="r1d"></td>
+                <td id="r1dt"></td>
+            </tr>
+            <tr>
+                <td id="r2m"></td>
+                <td id="r2d"></td>
+                <td id="r2dt"></td>
+            </tr>
+            <tr>
+                <td id="r3m"></td>
+                <td id="r3d"></td>
+                <td id="r3dt"></td>
+            </tr>
+            <tr>
+                <td id="r4m"></td>
+                <td id="r4d"></td>
+                <td id="r4dt"></td>
+            </tr>
+            <tr>
+                <td id="r5m"></td>
+                <td id="r5d"></td>
+                <td id="r5dt"></td>
+            </tr>
+        </table>
+    </div>
+
     <script src="static/JS/maps.js" async defer></script>
 </body>
 </html>

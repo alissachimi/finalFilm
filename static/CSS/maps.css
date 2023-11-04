@@ -2,11 +2,7 @@ body{
     background-color: floralwhite
 }
 
-gmp-map {
-    height: 100%;
-}
-
-#my-map{
-    height: 100px;
-    width: 100px;
+#map {
+    height: 50%;
+    width: 50%;
 }

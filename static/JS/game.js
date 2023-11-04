@@ -32,7 +32,7 @@ let MarkerArray =
     ]
 
 let movie=MarkerArray[0];
-document.getElementById("quote").innerHTML = movie.travelTime;
+document.getElementById("quote").innerHTML = movie.quote;
 
 
 function initialize() {
@@ -59,8 +59,7 @@ function getNewMovie(){
   panorama.setPosition(movie.location);
 
 
-  /////CHANGE TO QUOTE!
-  document.getElementById("quote").innerHTML = movie.travelTime;
+  document.getElementById("quote").innerHTML = movie.quote;
 }
 
 function hintReveal(hintTitle){

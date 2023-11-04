@@ -127,20 +127,26 @@ var input = document.getElementById("guess");
 //initialize attempt variable
 attempt = 1;
 
-//called when the user presses the ENTER key
+//called when the user presses the ENTER key on the answer line
 input.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         correct = isGuessCorrect(input);
+        input.value = '';
         if (correct === false){
             attempt++;
             subtractBadGuessPoints();
             if (attempt > 3){
               getNewMovie();
+              questionNumber++;
+              updatePercentCorrect((numberCorrect/questionNumber)*100);
             }
         }
         else {
             addCorrectPoints();
             getNewMovie();
+            numberCorrect++;
+            updatePercentCorrect((numberCorrect/questionNumber)*100);
+            questionNumber++;
         }
     }
 });
@@ -162,3 +168,15 @@ function updateScore(newScore){
 }
 
 ////////////////*END OF GAME SCORE CODE*/////////////////////
+
+
+///////////////*PERCENT CORRECT CODE*///////////////////////
+
+//initialize question number and number correct
+questionNumber = 1;
+numberCorrect = 0;
+
+
+function updatePercentCorrect(percent){
+  percentcorrect.textContent = percent.toFixed(1) + '%';
+}

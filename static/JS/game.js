@@ -56,11 +56,24 @@ function getNewMovie(){
   document.getElementById("quote").innerHTML = movie.travelTime;
 }
 
-function hintReveal(hintTitle){
+async function hintReveal(hintTitle){
+  if($('#' + hintTitle).text() == "Lead Actor" || $('#' + hintTitle).text() == "Genre" || $('#' + hintTitle).text() == "Release Year"){
+    //insrease hint count by one
+  }
+
+
   $('#' + hintTitle).animate({
-    backgroundColor: 'white',
-    innerHTML: "hello",
-    color: 'white'
+    opacity: '0.5',
+    borderWidth: "5px"
+  });
+
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  $('#' + hintTitle).text(movie.travelTime).animate();
+
+  $('#' + hintTitle).animate({
+    opacity: '1',
+    borderWidth: "1px"
   });
 
 }

@@ -81,10 +81,11 @@ function codeAddress(address, marker) {
       }
     });
   }
+  let address = { lat: 38.9404, lng: -92.3277 };
 
 async function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
-        center: {lat:38.9404, lng: -92.3277},
+        center: address,
         zoom: 8,
         disableDefaultUI: true
     });
@@ -151,7 +152,6 @@ async function initMap() {
         searchBox.setBounds(map.getBounds());
     });
 
-    let address = { lat: 38.9404, lng: -92.3277 };
 
     findDistances(address, MarkerArray);
 

@@ -30,23 +30,24 @@
       <div class="grid-item">
         <div id="statsColumn">
           <div class="statsBox" id="stepsPossible">
-            <h3 class="statsTitle">Steps Possible:</h3>
-            <h4>3</h4>
+            <h3 class="statsTitle">Steps Possible: <span>3</span></h3>
           </div>
           <div class="statsBox" id="currentScore">
             <h3 class="statsTitle">Hints:</h3>
-            <center>
-            <h4 class="hintBox" id="actorHint" onclick="hintReveal('actorHint')">Lead Actor</h4>
+          <center>
+            <h4 class="hintBox" id="actorHint" onclick="hintReveal('actorHint')" onclick="subtractHintPoints(score)">Lead Actor</h4>
 
-            <h4 class="hintBox" id="genreHint" onclick="hintReveal('genreHint')">Genre</h4>
+            <h4 class="hintBox" id="genreHint" onclick="hintReveal('genreHint')" onclick="subtractHintPoints(score)">Genre</h4>
 
-            <h4 class="hintBox" id="yearHint" onclick="hintReveal('yearHint')">Release Year</h4>
+            <h4 class="hintBox" id="yearHint" onclick="hintReveal('yearHint')" onclick="subtractHintPoints(score)">Release Year</h4>
           </center>
           </div>
           <div class="statsBox" id="hints">
-            <h3 class="statsTitle">Percent Correct: <span>3</span></h3>
+            <h3 class="statsTitle">Percent Correct:</h3>
+            <h4>3</h4>
 
-            <h3 class="statsTitle">Score: <span>3</span></h3>
+            <h3 class="statsTitle">Score:</h3>
+            <h4>3</h4>
           </div>
         </div>
       </div>

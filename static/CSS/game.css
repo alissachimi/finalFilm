@@ -130,3 +130,22 @@ form {
   width:60%;
   border:1px solid #a6482691;
 }
+
+.howToMessageBackground{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.455);
+  z-index: 1;
+  margin: 0;
+}
+
+.howToMessageFront{
+  position: relative;
+  background-color: white;
+  width: 50%;
+  padding: 30px;
+  margin-top: 50px;
+}

@@ -185,3 +185,13 @@ async function initMap() {
     });
 
 }
+
+function searchQueryFromHome(){
+    const urlParams = new URLSearchParams(window.location.search);
+    const location = urlParams.get('location');
+    if(location){
+        document.getElementById("pac-input").value = decodeURIComponent(location);
+    }
+}
+
+searchQueryFromHome();

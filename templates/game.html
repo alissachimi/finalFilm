@@ -43,11 +43,9 @@
           </center>
           </div>
           <div class="statsBox" id="hints">
-            <h3 class="statsTitle">Percent Correct:</h3>
-            <h4>3</h4>
+            <h3 class="statsTitle">Percent Correct: <span>3</span></h3>
 
-            <h3 class="statsTitle">Score:</h3>
-            <h4>3</h4>
+            <h3 class="statsTitle">Score: <span>3</span></h3>
           </div>
         </div>
       </div>
@@ -56,10 +54,14 @@
 
     </div>
 
-    <button onclick="getNewMovie()">reset</button>
+    <button onclick="getNewMovie()" style="position: absolute; top: 10px; ">reset</button>
     <button onclick="getNew()" id="but2">resetv2</button>
 
-
+    <div class="howToMessageBackground">
+      <div class="howToMessageFront">
+        <p>hi</p>
+      </div>
+    </div>
 
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr_GiC_sLRJi7Urje8rqN5TJ-z_n8SVJQ&callback=initialize&v=weekly"

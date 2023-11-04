@@ -32,12 +32,13 @@ h1 {
 }
 
 #street-view {
-  height: 400px;
+  height: 80%;
   width: 90%;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 5px 5px 12px #888888;
+  margin-bottom: 20px;
 
 }
 
@@ -109,11 +110,9 @@ form {
   text-align: center;
   background-color: #9fbec156;
   box-shadow: 5px 5px 12px #888888;
-  margin: 15px;
-  padding: 5px;
+  margin: 20px;
+  padding: 8px;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .statsTitle{
@@ -127,7 +126,6 @@ form {
 .hintBox{
   background-color: #3f737345;
   border-radius: 5px;
-  padding: 3px;
-  width:70%;
-  
+  padding: 4px;
+  width:60%;
 }

@@ -2,8 +2,12 @@ from flask import Flask, send_file, render_template, request, redirect, session,
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
+    if(request.method=='POST'):
+        #do something
+        print('hi')
+    
     return render_template('home.html')
 
 @app.route('/maps')

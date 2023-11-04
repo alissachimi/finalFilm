@@ -55,3 +55,12 @@ function getNewMovie(){
   /////CHANGE TO QUOTE!
   document.getElementById("quote").innerHTML = movie.travelTime;
 }
+
+function hintReveal(hintTitle){
+  $('#' + hintTitle).animate({
+    backgroundColor: 'white',
+    innerHTML: "hello",
+    color: 'white'
+  });
+
+}

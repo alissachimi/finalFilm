@@ -57,6 +57,9 @@ function getNewMovie(){
   currentArrayIndex++;
   movie = MarkerArray[currentArrayIndex];
   panorama.setPosition(movie.location);
+  $('#actorHint').text("Lead Actor");
+  $('#genreHint').text("Genre");
+  $('#yearHint').text("Release Year");
 
 
   document.getElementById("quote").innerHTML = movie.quote;

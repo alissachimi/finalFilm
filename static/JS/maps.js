@@ -1,3 +1,10 @@
+window.addEventListener('load',function(){
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src= 'http://maps.googleapis.com/maps/api/js?key=AIzaSyCr_GiC_sLRJi7Urje8rqN5TJ-z_n8SVJQ&callback=initMap&libraries=places'
+    document.body.appendChild(script);
+  });
+
 async function rowSlideIn(rowName){
     $("#rowName").slideDown("slow");
     await new Promise(resolve => setTimeout(resolve, 300));
@@ -98,7 +105,6 @@ function codeAddress(address, marker) {
 
   let address = { lat: 38.9404, lng: -92.3277 };
 
-address = searchQueryFromHome(address);
 
 async function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
@@ -116,7 +122,9 @@ async function initMap() {
 
     */
 
-
+    address = searchQueryFromHome(address);
+    map.setCenter();
+    
     let MarkerArray = [{location:{lat:40.7812, lng: -73.9732}, content: '<h3>Night at the Museum</h3>', id: 1, distance: 0, movie: 'Night at the Museum', travelTime: "1 hour"}, 
         {location:{lat:40.7614, lng: -73.9776}, content: '<h3>Breakfast at Tiffany\'s</h3>', id: 2, distance: 0, movie: 'Breakfast at Tiffany\'s', travelTime: "1 hour"},
         {location:{lat:42.1086, lng: -87.7322}, content: '<h3>Home Alone</h3>', id: 3, distance: 0, movie: 'Home Alone', travelTime: "1 hour"},
@@ -210,6 +218,8 @@ function searchQueryFromHome(address){
 
         document.getElementById("pac-input").value = decodeURIComponent(location);
         address = decodeURIComponent(location);
+        console.log(address);
+
         address = returnGeoCodeFromAddress(address);
         console.log(address);
     }

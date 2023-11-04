@@ -2,3 +2,27 @@ body{
     background-color: floralwhite;
     text-align: center;
 }
+
+button{
+    border-radius: 5%;
+    padding: 10px;
+    background-color: #9FBEC1;
+    border: none;
+}
+
+@keyframes buttonAnimation {
+    from {background-color: #9FBEC1;}
+    to {background-color: #3F7373;}
+}
+
+button:hover{
+    cursor: pointer;
+    animation-name: buttonAnimation;
+    animation-duration: 1.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+button:active{
+    transform: translateY(4px);
+}

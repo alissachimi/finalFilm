@@ -2,6 +2,7 @@ body{
     background-color: floralwhite
 }
 
-gmp-map {
-    height: 100%;
-  }
+#map {
+    height: 50%;
+    width: 50%;
+}

@@ -1,18 +1,18 @@
 <a href="/" style="text-decoration: none;"><button>home</button></a>
 <!DOCTYPE HTML>
 <html -lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/CSS/home.css">
-    <title>Home</title>
-    <script async src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCr_GiC_sLRJi7Urje8rqN5TJ-z_n8SVJQ&callback=console.debug&libraries=maps,marker&v=beta">
+    <title>Film Spots Near You</title>
+    <script async src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCr_GiC_sLRJi7Urje8rqN5TJ-z_n8SVJQ&callback=initialize&libraries=maps,marker&v=beta">
     </script>
 </head>
+
 <body>
-    <gmp-map center="38.93217086791992,-92.33308410644531" zoom="14" map-id="DEMO_MAP_ID">
-        <gmp-advanced-marker position="38.93217086791992,-92.33308410644531" title="My location">
-        </gmp-advanced-marker>
-    </gmp-map>
+    <div id="map"></div>
+    <script src="static/JS/maps.js" async defer></script>
 </body>
 </html>

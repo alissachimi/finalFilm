@@ -98,6 +98,10 @@ async function hintReveal(hintTitle){
     borderWidth: "1px"
   });
 
+  $('#' + hintTitle).css(
+    'color', 'white' 
+  );
+  
 }
 
 
@@ -176,7 +180,7 @@ questionNumber = 1;
 numberCorrect = 0;
 
 function updateQuestionNumber(questionNumber){
-  qnumber.textContent = questionNumber;
+  qNumber.textContent = questionNumber;
 }
 
 function updatePercentCorrect(percent){

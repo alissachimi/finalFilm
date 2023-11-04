@@ -17,9 +17,7 @@ function initialize() {
         pov: {
           heading: 34,
           pitch: 10,
-        },
-        motionTracking: false,
-        motionTrackingControl: false
+        }
       },
     );
   

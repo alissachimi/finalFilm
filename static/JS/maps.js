@@ -83,6 +83,8 @@ function codeAddress(address, marker) {
   }
   let address = { lat: 38.9404, lng: -92.3277 };
 
+address = searchQueryFromHome(address);
+
 async function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
         center: address,
@@ -186,12 +188,12 @@ async function initMap() {
 
 }
 
-function searchQueryFromHome(){
+function searchQueryFromHome(address){
     const urlParams = new URLSearchParams(window.location.search);
     const location = urlParams.get('location');
     if(location){
         document.getElementById("pac-input").value = decodeURIComponent(location);
+        address = decodeURIComponent(location);
     }
+    return address;
 }
-
-searchQueryFromHome();

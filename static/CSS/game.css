@@ -1,6 +1,16 @@
-body{
-    background-color: floralwhite;
-    text-align: center;
+html,
+body {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#street-view {
+  height: 500px;
+  width: 500px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button{

@@ -139,6 +139,7 @@ input.addEventListener("keyup", function(event) {
               getNewMovie();
               questionNumber++;
               updatePercentCorrect((numberCorrect/questionNumber)*100);
+              updateQuestionNumber(questionNumber);
             }
         }
         else {
@@ -147,6 +148,7 @@ input.addEventListener("keyup", function(event) {
             numberCorrect++;
             updatePercentCorrect((numberCorrect/questionNumber)*100);
             questionNumber++;
+            updateQuestionNumber(questionNumber);
         }
     }
 });
@@ -169,14 +171,15 @@ function updateScore(newScore){
 
 ////////////////*END OF GAME SCORE CODE*/////////////////////
 
-
-///////////////*PERCENT CORRECT CODE*///////////////////////
-
 //initialize question number and number correct
 questionNumber = 1;
 numberCorrect = 0;
 
+function updateQuestionNumber(questionNumber){
+  qnumber.textContent = questionNumber;
+}
 
 function updatePercentCorrect(percent){
   percentcorrect.textContent = percent.toFixed(1) + '%';
 }
+

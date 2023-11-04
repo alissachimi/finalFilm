@@ -26,3 +26,7 @@ button:hover{
 button:active{
     transform: translateY(4px);
 }
+
+gmp-map {
+    height: 100%;
+  }

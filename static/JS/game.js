@@ -1,7 +1,8 @@
 let panorama;
 let currentArrayIndex = 0;
 
-let MarkerArray = 
+//array containing all movie information
+let MovieArray = 
         [{location:{lat:40.7812, lng: -73.9732}, content: '<h3>Night at the Museum</h3>', id: 1, distance: 0, movie: 'Night at the Museum', travelTime: "1 hour", genre: 'Adventure/Fantasy', actor: 'Ben Stiller', year: "2006", quote: "\"Yes, yes, do go back into the underworld! Thank you for coming! Goodnight!\""}, 
         {location:{lat:40.7614, lng: -73.9776}, content: '<h3>Breakfast at Tiffany\'s</h3>', id: 2, distance: 0, movie: 'Breakfast at Tiffany\'s', travelTime: "1 hour", genre: 'Romance/Comedy', actor: 'Audrey Hepburn', year: "1961", quote: "\"It should take you exactly four seconds to cross here to that door. I'll give you two.\""},
         {location:{lat:42.1086, lng: -87.7322}, content: '<h3>Home Alone</h3>', id: 3, distance: 0, movie: 'Home Alone', travelTime: "1 hour", genre: 'Children/Family', actor: 'Macaulay Culkin', year: "1990", quote: "\"Did I burn down the joint? I don't think so. I was making ornaments out of fishhooks.\""},
@@ -31,7 +32,7 @@ let MarkerArray =
         {location:{lat:40.0905, lng: -79.7220}, content: '<h3>The Silence of the Lambs</h3>', id: 27, distance: 0, movie: 'The Silence of the Lambs', travelTime: "1 hour", genre: 'Horror', actor: 'Anthony Hopkins', year: "1991", quote: "\"Being smart spoils a lot of things, doesn't it?\""}
     ]
 
-let movie=MarkerArray[0];
+let movie=MovieArray[0];
 document.getElementById("quote").innerHTML = movie.quote;
 
 
@@ -53,15 +54,17 @@ function initialize() {
 
 window.initialize = initialize;
 
+//this function is called to display new movie information after 
+//the user uses all their guesses on the previous movie or
+//gets it correct
 function getNewMovie(){
   currentArrayIndex++;
-  movie = MarkerArray[currentArrayIndex];
+  movie = MovieArray[currentArrayIndex];
   panorama.setPosition(movie.location);
   $('#actorHint').text("Lead Actor");
   $('#genreHint').text("Genre");
   $('#yearHint').text("Release Year");
-
-
+  attempt = 1;
   document.getElementById("quote").innerHTML = movie.quote;
 }
 
@@ -103,19 +106,17 @@ async function hintReveal(hintTitle){
 let score = 0; //initialize game score
 
 //called to subtract points when a hint button is clicked
-function subtractHintPoints(score){
+function subtractHintPoints(){
     score = score - 5;
-    updateScore(score);
 }
 
 //called to subtract points when a guess is incorrect
-function subtractBadGuessPoints(score){
+function subtractBadGuessPoints(){
     score = score - 5;
-    updateScore(score);
 }
 
 //called to add points when guess is correct
-function addCorrectPoints(score){
+function addCorrectPoints(){
     score = score + 50;
     updateScore(score);
 }
@@ -123,6 +124,7 @@ function addCorrectPoints(score){
 //tracks value of text 'answer' form
 var input = document.getElementById("guess");
 
+//initialize attempt variable
 attempt = 1;
 
 //called when the user presses the ENTER key
@@ -131,21 +133,24 @@ input.addEventListener("keyup", function(event) {
         correct = isGuessCorrect(input);
         if (correct === false){
             attempt++;
-            subtractBadGuessPoints(score);
+            subtractBadGuessPoints();
+            if (attempt > 3){
+              getNewMovie();
+            }
         }
-
-        if (correct === true){
-            addCorrectPoints(score);
+        else {
+            addCorrectPoints();
+            getNewMovie();
         }
     }
 });
 
-/*This function determines if the user's guess is correct 
-or not and stores this as a boolean variable */
+//this function determines if the user's guess is 
+//correct and returns a boolean variable
 function isGuessCorrect(input){
 
     //return true if input matches movie title
-    if (input.toLowerCase() === movie.movie.toLowerCase()) {
+    if (input.value.toLowerCase() === movie.movie.toLowerCase()) {
         return true;
     }
     //return false otherwise

@@ -14,48 +14,48 @@
 </head>
 
 <body>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box"/>
+
     <div class="grid-container">
-        <input
-        id="pac-input"
-        class="controls"
-        type="text"
-        placeholder="Search Box"
-      />
         <div id="map" class="grid-item"></div>
-        <table id="distanceTable" class="grid-item">
-            <tr>
-                <th>Movie</th>
-                <th>Distance</th>
-                <th>Driving Time</th>
-            </tr>
-            <tr>
-                <td id="r1m"></td>
-                <td id="r1d"></td>
-                <td id="r1dt"></td>
-            </tr>
-            <tr>
-                <td id="r2m"></td>
-                <td id="r2d"></td>
-                <td id="r2dt"></td>
-            </tr>
-            <tr>
-                <td id="r3m"></td>
-                <td id="r3d"></td>
-                <td id="r3dt"></td>
-            </tr>
-            <tr>
-                <td id="r4m"></td>
-                <td id="r4d"></td>
-                <td id="r4dt"></td>
-            </tr>
-            <tr>
-                <td id="r5m"></td>
-                <td id="r5d"></td>
-                <td id="r5dt"></td>
-            </tr>
-        </table>
+        <div  class="grid-item">
+            <h2>Showing nearby attractions for ... <span id="addressHere"></span></h2>
+            <table id="distanceTable">
+                <tr>
+                    <th>Movie</th>
+                    <th>Distance</th>
+                    <th>Driving Time</th>
+                </tr>
+                <tr id="r1">
+                    <td id="r1m"></td>
+                    <td id="r1d"></td>
+                    <td id="r1dt"></td>
+                </tr>
+                <tr id="r2">
+                    <td id="r2m"></td>
+                    <td id="r2d"></td>
+                    <td id="r2dt"></td>
+                </tr>
+                <tr id="r3">
+                    <td id="r3m"></td>
+                    <td id="r3d"></td>
+                    <td id="r3dt"></td>
+                </tr>
+                <tr id="r4">
+                    <td id="r4m"></td>
+                    <td id="r4d"></td>
+                    <td id="r4dt"></td>
+                </tr>
+                <tr id="r5">
+                    <td id="r5m"></td>
+                    <td id="r5d"></td>
+                    <td id="r5dt"></td>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <script src="static/JS/maps.js" async defer></script>
+    <script src="static/JS/mapsJquery.js" async defer></script>
 </body>
 </html>

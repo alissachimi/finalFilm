@@ -1,4 +1,23 @@
-function fillClosestLocationsTable(locations){
+async function rowSlideIn(rowName){
+    $("#rowName").slideDown("slow");
+    await new Promise(resolve => setTimeout(resolve, 300));
+}
+
+function deleteClosestLocationsTable(locations){
+    for(let i=0; i<5; i++){
+        let movie = document.getElementById("r" + (i+1) + "m");
+        let distance = document.getElementById("r" + (i+1) + "d");
+        let driveTime = document.getElementById("r" + (i+1) + "dt");
+
+        movie.innerHTML = "";
+        distance.innerHTML = "";
+        driveTime.innerHTML = "";
+    }
+}
+
+async function fillClosestLocationsTable(locations){
+    deleteClosestLocationsTable(locations);
+
     for(let i=0; i<5; i++){
         let movie = document.getElementById("r" + (i+1) + "m");
         let distance = document.getElementById("r" + (i+1) + "d");
@@ -7,6 +26,8 @@ function fillClosestLocationsTable(locations){
         movie.innerHTML = locations[i].movie;
         distance.innerHTML = locations[i].distance;
         driveTime.innerHTML = locations[i].travelTime;
+
+        await rowSlideIn("r" + (i+1))
     }
 }
 
@@ -43,10 +64,28 @@ async function findDistances(address, MarkerArray){
     fillClosestLocationsTable(MarkerArray);
 }
 
+function codeAddress(address, marker) {
+
+    var geocoder = new google.maps.Geocoder();
+
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == 'OK') {
+        map.panTo(results[0].geometry.location);
+        map.setZoom(7);
+
+        marker.setPosition(results[0].geometry.location);
+
+
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+
 async function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
-        center: {lat:39.8283, lng: -98.5795},
-        zoom: 3,
+        center: {lat:38.9404, lng: -92.3277},
+        zoom: 8,
         disableDefaultUI: true
     });
 
@@ -106,7 +145,7 @@ async function initMap() {
     const input = document.getElementById("pac-input");
     const searchBox = new google.maps.places.SearchBox(input);
   
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
     // Bias the SearchBox results towards current map's viewport.
     map.addListener("bounds_changed", () => {
         searchBox.setBounds(map.getBounds());
@@ -115,23 +154,33 @@ async function initMap() {
     let address = { lat: 38.9404, lng: -92.3277 };
 
     findDistances(address, MarkerArray);
+
+    var  marker = new google.maps.Marker({
+        map: map,
+        position: address,
+        icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+    });
   
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
-    searchBox.addListener("places_changed", () => {
+    searchBox.addListener("places_changed", async () => {
         const places = searchBox.getPlaces();
-
-        $("#distanceTable:not(:first)").remove();
-
-
+        deleteClosestLocationsTable(MarkerArray);
+        map.setZoom(3);
+        await new Promise(resolve => setTimeout(resolve, 1000));
 
         if (places.length == 0) {
-        return;
+            return;
         } else {
-        address = places[0].formatted_address;
+            address = places[0].formatted_address;
+            document.getElementById("addressHere").innerHTML = address;
+
+            codeAddress(address, marker);
+
+            findDistances(address, MarkerArray);
+
         }
 
-         findDistances(address, MarkerArray);
 
     });
 

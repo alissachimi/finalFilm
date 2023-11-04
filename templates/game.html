@@ -1,35 +1,68 @@
 <html>
   <head>
-    <title>Street View Containers</title>
+    <title>Game</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" type="text/css" href="static/CSS/game.css" />
-    <script type="module" src="static/JS/game.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Roboto+Mono&display=swap" rel="stylesheet">
   </head>
   <body>
+    <a href="/" style="text-decoration: none;"><button id="homeButton">home</button></a>
     <div id="top-page">
-      <a href="/" style="text-decoration: none;"><button>home</button></a>
-      <h1>Guess what was filmed here ...</h1>
-      <p id="subheading">Can you guess what famous movie was filmed here based on the clues?</p>
+      <h1 id="quote">Guess what was filmed here ...</h1>
     </div>
-    <div id="street-view"></div>
-    <form>
-      <label for="guess">Answer:</label>
-      <input type="text" id="guess" guess="guess">
-    </form>
 
-    <!-- 
-      The `defer` attribute causes the callback to execute after the full HTML
-      document has been parsed. For non-blocking uses, avoiding race conditions,
-      and consistent behavior across browsers, consider loading using Promises.
-      See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
-      for more information.
-      -->
+    <div class="grid-container">
+      <div class="grid-item">
+        <div id="progressImg"></div>
+      </div>
+      <div class="grid-item">
+
+        <div id="street-view"></div>
+        <form>
+          <label for="guess">Answer:</label>
+          <input type="text" id="guess" guess="guess">
+        </form>
+
+      </div>
+      <div class="grid-item">
+        <div id="statsColumn">
+          <div class="statsBox" id="stepsPossible">
+            <h3 class="statsTitle">Steps Possible:</h3>
+            <h4>3</h4>
+          </div>
+          <div class="statsBox" id="currentScore">
+            <h3 class="statsTitle">Hints:</h3>
+            <h4 class="hintBox">Lead Actor</h4>
+
+            <h4 class="hintBox">Genre</h4>
+
+            <h4 class="hintBox">Release Year</h4>
+          </div>
+          <div class="statsBox" id="hints">
+            <h3 class="statsTitle">Percent Correct:</h3>
+            <h4>3</h4>
+
+            <h3 class="statsTitle">Score:</h3>
+            <h4>3</h4>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <button onclick="getNewMovie()">reset</button>
+    <button onclick="getNew()" id="but2">resetv2</button>
+
+
+
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr_GiC_sLRJi7Urje8rqN5TJ-z_n8SVJQ&callback=initialize&v=weekly"
       defer
     ></script>
+    <script src="static/JS/game.js" async defer></script>
   </body>
 </html>

@@ -11,12 +11,16 @@ h1 {
   text-align: center;
   color: #732B1A;
   font-size: 60;
-  background-color: #BF754B;
-  margin-bottom: 0;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 #top-page {
-  background-color: #BF754B;
+  background-color: #bf764b1d;
+  padding: 10px;
+  margin: 20px;
+  box-shadow: 5px 5px 12px #888888;
+
 }
 
 #subheading {
@@ -28,11 +32,13 @@ h1 {
 }
 
 #street-view {
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 90%;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 5px 5px 12px #888888;
+
 }
 
 button{
@@ -65,4 +71,63 @@ form {
   color: #3F7373;
   text-align: center;
   padding-top: 8px;
+}
+
+#homeButton{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-content: center;
+  width:100%;
+  height: fit-content;
+}
+
+.grid-item{
+  padding: 10px;
+}
+
+#progressImg{
+  background-color: #bf764b48;
+  height: 100%;
+  box-shadow: 5px 5px 12px #888888;
+}
+
+#statsColumn{
+  background-color: #bf764b48;
+  height: 100%;
+  box-shadow: 5px 5px 12px #888888;
+  padding: 10px;
+}
+
+.statsBox{
+  justify-content: center;
+  text-align: center;
+  background-color: #9fbec156;
+  box-shadow: 5px 5px 12px #888888;
+  margin: 15px;
+  padding: 5px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.statsTitle{
+  font-family: 'Roboto Mono', monospace;
+  margin-top: 0;
+  padding-top: 0;
+  font-weight: 300;
+
+}
+
+.hintBox{
+  background-color: #3f737345;
+  border-radius: 5px;
+  padding: 3px;
+  width:70%;
+  
 }

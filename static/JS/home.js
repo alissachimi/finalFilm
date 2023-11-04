@@ -11,7 +11,8 @@ function initAutoComplete() {
   
 
 function redirectToMaps(){
-const searchQuery = encodeURIComponent(document.getElementById("places-search").value);
-window.location.href = 'maps.html?location=' + searchQuery;
+  const searchQuery = encodeURIComponent(document.getElementById("places-search").value);
+
+  window.location.href = '/maps?location=' + searchQuery;
 }
   

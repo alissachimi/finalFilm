@@ -65,10 +65,9 @@ function getNewMovie(){
   document.getElementById("quote").innerHTML = movie.quote;
 }
 
-async function hintReveal(hintTitle, score){
+async function hintReveal(hintTitle){
   if($('#' + hintTitle).text() == "Lead Actor" || $('#' + hintTitle).text() == "Genre" || $('#' + hintTitle).text() == "Release Year"){
     //insrease hint count by one
-    subtractHintPoints(score);
   }
 
 

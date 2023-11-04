@@ -2,13 +2,23 @@
   <head>
     <title>Street View Containers</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
     <link rel="stylesheet" type="text/css" href="static/CSS/game.css" />
     <script type="module" src="static/JS/game.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Roboto+Mono&display=swap" rel="stylesheet">
   </head>
   <body>
-    <a href="/" style="text-decoration: none;"><button>home</button></a>
+    <div id="top-page">
+      <a href="/" style="text-decoration: none;"><button>home</button></a>
+      <h1>Guess what was filmed here ...</h1>
+      <p id="subheading">Can you guess what famous movie was filmed here based on the clues?</p>
+    </div>
     <div id="street-view"></div>
+    <form>
+      <label for="guess">Answer:</label>
+      <input type="text" id="guess" guess="guess">
+    </form>
 
     <!-- 
       The `defer` attribute causes the callback to execute after the full HTML

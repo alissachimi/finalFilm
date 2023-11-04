@@ -3,6 +3,28 @@ body {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  background-color: floralwhite;
+}
+
+h1 {
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  color: #732B1A;
+  font-size: 60;
+  background-color: #BF754B;
+  margin-bottom: 0;
+}
+
+#top-page {
+  background-color: #BF754B;
+}
+
+#subheading {
+  font-family: 'Mulish', sans-serif;
+  color: white;
+  text-decoration: solid;
+  font-size: 20;
+  text-align: center;
 }
 
 #street-view {
@@ -17,7 +39,9 @@ button{
     border-radius: 5%;
     padding: 10px;
     background-color: #9FBEC1;
-    border: none;
+    border-color: white;
+    color: white;
+    font-family: 'Mulish', 'sans-serif';
 }
 
 @keyframes buttonAnimation {
@@ -35,4 +59,10 @@ button:hover{
 
 button:active{
     transform: translateY(4px);
+}
+
+form {
+  color: #3F7373;
+  text-align: center;
+  padding-top: 8px;
 }

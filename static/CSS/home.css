@@ -17,7 +17,7 @@ button{
 .gif{
     scale: 65%;
     margin-top: -7%;
-    margin-left: -15%;
+    margin-left: -16%;
 }
 
 @keyframes buttonAnimation {
@@ -48,6 +48,7 @@ button:active{
     font-size: 16px;
     width: 50%;
     border-radius: 10px;
+    border-color: #BF754B;
 }
 
 

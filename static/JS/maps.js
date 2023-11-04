@@ -81,6 +81,21 @@ function codeAddress(address, marker) {
       }
     });
   }
+
+  function returnGeoCodeFromAddress(address) {
+
+    var geocoder = new google.maps.Geocoder();
+
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == 'OK') {
+        return results[0].geometry.location;
+
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+
   let address = { lat: 38.9404, lng: -92.3277 };
 
 address = searchQueryFromHome(address);
@@ -192,8 +207,11 @@ function searchQueryFromHome(address){
     const urlParams = new URLSearchParams(window.location.search);
     const location = urlParams.get('location');
     if(location){
+
         document.getElementById("pac-input").value = decodeURIComponent(location);
         address = decodeURIComponent(location);
+        address = returnGeoCodeFromAddress(address);
+        console.log(address);
     }
     return address;
 }

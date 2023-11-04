@@ -7,8 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Home</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script async src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCr_GiC_sLRJi7Urje8rqN5TJ-z_n8SVJQ&callback=initialize">
-        defer </script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr_GiC_sLRJi7Urje8rqN5TJ-z_n8SVJQ&libraries=places&callback=initialize" defer></script>
 </head>
 <body>
     <div class="content">
@@ -23,6 +22,7 @@
         <a href="maps" style="text-decoration: none; clear: both;"><button>maps</button></a>
     </div>
 
+    <!-- search box -->
     <div class="search-container">
         <input id="places-search" class="search-input" type="text" placeholder="Enter your location">
     </div>

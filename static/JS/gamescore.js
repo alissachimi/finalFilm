@@ -3,18 +3,19 @@
 let score = 0; //initialize game score
 
 //called to subtract points when a hint button is clicked
-function subtractHintPoints(score){
+function subtractHintPoints(){
     score = score - 5;
 }
 
 //called to subtract points when a guess is incorrect
-function subtractBadGuessPoints(score){
+function subtractBadGuessPoints(){
     score = score - 5;
 }
 
 //called to add points when guess is correct
-function addCorrectPoints(score){
+function addCorrectPoints(){
     score = score + 50;
+    updateScore(score);
 }
 
 //tracks value of text 'answer' form
@@ -26,13 +27,13 @@ attempt = 1;
 input.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         correct = isGuessCorrect(input);
-        if (correct = false){
+        if (correct === false){
             attempt++;
-            subtractBadGuessPoints(score);
+            subtractBadGuessPoints();
         }
 
-        if (correct = true){
-            addCorrectPoints(score);
+        if (correct === true){
+            addCorrectPoints();
         }
     }
 });
@@ -47,4 +48,8 @@ function isGuessCorrect(input){
     }
     //return false otherwise
     return false;
+}
+
+function updateScore(newScore){
+    userscore.textContent = newScore;
 }

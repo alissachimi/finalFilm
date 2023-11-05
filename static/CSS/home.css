@@ -7,11 +7,26 @@ body{
 }
 
 button{
-    border-radius: 5%;
-    padding: 20px;
+    border-radius: 10px;
+    padding: 10px 20px;
     margin: 10px;
-    background-color: #9FBEC1;
+    background-image: linear-gradient(to bottom, #9FBEC1 0%, rgb(135, 178, 178) 50%, #5da6a6 100%);
+    text-decoration: none;
     border: none;
+    color: #fff;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-shadow: 0 0 5px #8ba8a3;
+    flex: 1 1 auto;
+    transition: 0.5s;
+    background-size: 200% auto;
+}
+
+.button-go{
+    margin-left: 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
 .gif{
@@ -20,35 +35,42 @@ button{
     margin-left: -16%;
 }
 
-@keyframes buttonAnimation {
+/* @keyframes buttonAnimation {
     from {background-color: #9FBEC1;}
     to {background-color: #3F7373;}
-}
+} */
 
 button:hover{
     cursor: pointer;
-    animation-name: buttonAnimation;
+    /* animation-name: buttonAnimation;
     animation-duration: 1.5s;
     animation-direction: alternate;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 }
 
 button:active{
-    transform: translateY(4px);
+    transform: translateY(6px);
 }
 
-.search-container{
-    display: flex;
+/* .search-container{
+    /* display: flex;
     align-items: center;
-    justify-content: center;
-}
+    justify-content: center; */
+/* } */
 
 .search-input{
     padding: 10px;
     font-size: 16px;
-    width: 50%;
     border-radius: 10px;
     border-color: #BF754B;
 }
+
+.slogan{
+    align-items: center;
+    text-align: center;
+}
+  
+  
 
 

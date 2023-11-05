@@ -1,9 +1,7 @@
 html,
 body {
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
   background-color: floralwhite;
+  justify-content: center;
 }
 
 h1 {
@@ -32,7 +30,7 @@ h1 {
 }
 
 #street-view {
-  height: 80%;
+  height: 50%;
   width: 90%;
   justify-content: center;
   margin-left: auto;
@@ -85,22 +83,20 @@ form {
   grid-template-columns: 1fr 2fr 1fr;
   justify-content: center;
   width:100%;
-  height: fit-content;
 }
 
 .grid-item{
-  padding: 10px;
+  margin: 10px;
 }
 
 #progressImg{
-  background-color: #bf764b48;
-  height: 100%;
-  box-shadow: 5px 5px 12px #888888;
+  height: 53%;
+  padding: 20px;
 }
 
 #statsColumn{
   background-color: #bf764b48;
-  height: 100%;
+  height: fit-content;
   box-shadow: 5px 5px 12px #888888;
   padding: 10px;
 }

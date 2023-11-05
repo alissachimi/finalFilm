@@ -194,3 +194,4 @@ function updatePercentCorrect(percent){
   percentcorrect.textContent = percent.toFixed(1) + '%';
 }
 
+

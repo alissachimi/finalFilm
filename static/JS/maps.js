@@ -1,3 +1,5 @@
+
+//this links the api in the js bc the normal way was not working, so we had to do it asyncronously
 window.addEventListener('load',function(){
     var script = document.createElement('script');
     script.type = 'text/javascript';
@@ -5,11 +7,14 @@ window.addEventListener('load',function(){
     document.body.appendChild(script);
   });
 
+
+//this jquery allows each row of the nearest places to slide in as they appear
 async function rowSlideIn(rowName){
     $("#rowName").slideDown("slow");
     await new Promise(resolve => setTimeout(resolve, 300));
 }
 
+//this clears out the old nearest locations when a new one is entered
 function deleteClosestLocationsTable(locations){
     for(let i=0; i<5; i++){
         let movie = document.getElementById("r" + (i+1) + "m");
@@ -22,6 +27,7 @@ function deleteClosestLocationsTable(locations){
     }
 }
 
+//this fills in the nearest locations table when a new query is entered
 async function fillClosestLocationsTable(locations){
     deleteClosestLocationsTable(locations);
 
@@ -38,11 +44,14 @@ async function fillClosestLocationsTable(locations){
     }
 }
 
+//returns latitudes and longitudes of an item
 function getLatsAndLongs(item){
     return item.location;
 
 }
 
+//uses DistanceMatrix api to get all the distances to the query location
+//then sorts them and displays the 5 shortest
 async function findDistances(address, MarkerArray){
     const service = new google.maps.DistanceMatrixService();
 
@@ -71,6 +80,7 @@ async function findDistances(address, MarkerArray){
     fillClosestLocationsTable(MarkerArray);
 }
 
+//turns a string address into lats and longs and puts a marker there
 function codeAddress(address, marker) {
 
     var geocoder = new google.maps.Geocoder();
@@ -89,41 +99,22 @@ function codeAddress(address, marker) {
     });
   }
 
-  function returnGeoCodeFromAddress(address) {
-
-    var geocoder = new google.maps.Geocoder();
-
-    geocoder.geocode( { 'address': address}, function(results, status) {
-      if (status == 'OK') {
-        return results[0].geometry.location;
-
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
-  }
-
-  let address = { lat: 38.9404, lng: -92.3277 };
+//defines a default address to show when page is loaded (Mizzou)
+ let address = { lat: 38.9404, lng: -92.3277 };
 
 
+//initalizes map and sets everything else up
 async function initMap() {
+    //actually creates map
     map = new google.maps.Map(document.getElementById("map"), {
         center: address,
         zoom: 8,
-        disableDefaultUI: true
+        disableDefaultUI: true //gets rid of controls
     });
 
-    /*
-    var marker = new google.maps.Marker({
-        position:{lat:-34.397, lng: 150.644},
-        map:map,
-        //can add icon here too
-    })
+    geocoder = new google.maps.Geocoder();
+    address = searchQueryFromHome(address, geocoder);
 
-    */
-
-    address = searchQueryFromHome(address);
-    map.setCenter();
     
     let MarkerArray = [{location:{lat:40.7812, lng: -73.9732}, content: '<h3>Night at the Museum</h3>', id: 1, distance: 0, movie: 'Night at the Museum', travelTime: "1 hour"}, 
         {location:{lat:40.7614, lng: -73.9776}, content: '<h3>Breakfast at Tiffany\'s</h3>', id: 2, distance: 0, movie: 'Breakfast at Tiffany\'s', travelTime: "1 hour"},
@@ -211,17 +202,30 @@ async function initMap() {
 
 }
 
-function searchQueryFromHome(address){
+function searchQueryFromHome(address, geocoder){
     const urlParams = new URLSearchParams(window.location.search);
     const location = urlParams.get('location');
     if(location){
 
         document.getElementById("pac-input").value = decodeURIComponent(location);
         address = decodeURIComponent(location);
-        console.log(address);
 
-        address = returnGeoCodeFromAddress(address);
-        console.log(address);
+        geocoder.geocode( { 'address': address}, function(results, status) {
+            if (status == 'OK') {
+              map.panTo(results[0].geometry.location);
+              map.setZoom(7);
+
+              marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location,
+                icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+            });      
+      
+            } else {
+              alert('Geocode was not successful for the following reason: ' + status);
+            }
+          });
+
     }
     return address;
 }

@@ -1,10 +1,14 @@
 body{
-    background-color: rgb(252, 249, 244);
-    background-image: url("");
+    background-image: url("/static/images/HomeBackground.jpg");
     text-align: center;
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
+}
+
+h1{
+    color: #BF754B;
+    text-shadow: 1px 1px 2px #BF754B;
 }
 
 button{
@@ -73,14 +77,13 @@ button:active{
 }
 
 #container{
-    border: 10px solid #8ba8a3;
+    border: 10px solid hsl(170, 14%, 60%);
     width: 85%;
     margin-left: 7%;
     height: 50vh;
     border-radius: 20px;
     margin-top: -3%;
-
-}
+    background: floralwhite;
 
 nav{
     background-color: #d6785671;

@@ -192,3 +192,11 @@ input{
   width: 50%;
   border-radius: 2px;
 }
+
+#actionslate{
+  position: "absolute";
+  height: 150px;
+  width: 150px;
+  bottom: 0;
+  right: 10px;
+}

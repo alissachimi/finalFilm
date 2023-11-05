@@ -70,6 +70,25 @@ button:active{
     align-items: center;
     text-align: center;
 }
+
+#container{
+    border: 10px solid #8ba8a3;
+    width: 85%;
+    margin-left: 7%;
+    height: 50vh;
+    border-radius: 20px;
+    margin-top: -3%;
+
+}
+
+nav{
+    background-color: #d6785671;
+}
+
+.favicon{
+    width: 2%;
+    padding: 10px;
+}
   
   
 

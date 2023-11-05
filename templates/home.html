@@ -10,27 +10,32 @@
     <!--<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr_GiC_sLRJi7Urje8rqN5TJ-z_n8SVJQ&libraries=places&callback=initAutoComplete" defer></script>-->
 </head>
 <body>
+    <nav>
+        <div class="favicon">
+            <img src="/static/images/favicon.svg" alt="footprint favicon">
+        </div>
+    </nav>
     <div class="content">
-        <img src="/static/images/Transparent-Background.svg" alt="FF Logo" style="width: 1200px; height: 275px; margin-top: 20px;">
+        <img src="/static/images/Transparent-Background.svg" alt="FF Logo" style="width: 85%; margin-top: 20px;">
         <div class="gif">
             <img src="/static//images/PintoPin.gif" alt="footprints GIF">
         </div>  
     </div>
 
-    <div class="slogan">
-        <h2>Step into the scene...</h2>
+    <div id="container">
+        <div class="slogan">
+            <h1>Welcome to Film Footprints!</h1>
+            <h2>Enter any location to show nearby famous film spots:</h2>
+        </div>
+        <!-- search box -->
+        <div id="search-container">
+            <input id="places-search" class="search-input" style="width: 50%;" type="text" placeholder="Enter a location">
+            <button style="text-decoration: none; clear: both; width: 10%;" class = "button-go" onclick="redirectToMaps()">Go</button>
+        </div>
+        <h2>Or test your knowledge and guess the film spot with a quote:</h2>
+        <a href="game"><button>game</button></a>
+
     </div>
-      
-      
-
-    <!-- search box -->
-    <div id="search-container">
-        <input id="places-search" class="search-input" style="width: 50%;" type="text" placeholder="Enter a location">
-        <button style="text-decoration: none; clear: both; width: 10%;" class = "button-go" onclick="redirectToMaps()">Go</button>
-    </div>
-
-
-    <a href="game"><button>game</button></a>
 
 
     

@@ -25,7 +25,13 @@
 
         <div id="street-view"></div>
         
-        <center><input type="text" id="guess" guess="guess" placeholder="Enter your guess here!"></center>
+        <center>
+          <input type="text" id="guess" guess="guess" placeholder="Enter your guess here!">
+          <div class="incorrectpopup">
+            <span class="popuptext" id="poptext">Incorrect</span>
+            <img src="/static/images/cutSlate.gif" id="popimage" alt="cutslate" class="popupimage" onclick="displayIncorrectPopup();">
+          </div>
+        </center>
 
       </div>
       <div class="grid-item">

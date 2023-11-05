@@ -150,6 +150,7 @@ input.addEventListener("keyup", function(event) {
         correct = isGuessCorrect(input);
         input.value = '';
         if (correct === false){
+            displayIncorrectPopup();
             attempt++;
             subtractBadGuessPoints();
             if (attempt > 3){
@@ -182,6 +183,13 @@ function isGuessCorrect(input){
     }
     //return false otherwise
     return false;
+}
+
+function displayIncorrectPopup(){
+  var pop1 = document.getElementById("poptext");
+  var pop2 = document.getElementById("popimage");
+  pop1.classList.toggle("show");
+  pop2.classList.toggle("show");
 }
 
 function updateScore(newScore){

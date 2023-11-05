@@ -11,8 +11,11 @@ window.addEventListener('load',function(){
 //this jquery allows each row of the nearest places to slide in as they appear
 async function rowSlideIn(rowName){
     $("#rowName").slideDown("slow");
+    $("#" + rowName).css("background-color", "white");
     await new Promise(resolve => setTimeout(resolve, 300));
 }
+
+
 
 //this clears out the old nearest locations when a new one is entered
 function deleteClosestLocationsTable(locations){
@@ -40,8 +43,12 @@ async function fillClosestLocationsTable(locations){
         distance.innerHTML = locations[i].distance;
         driveTime.innerHTML = locations[i].travelTime;
 
-        await rowSlideIn("r" + (i+1))
+        await rowSlideIn("r" + (i+1));
+    
     }
+    // $("table").css("border", "1px solid black");
+    // $("td").css("border", "1px solid black");
+    // $("th").css("border", "1px solid black");
 }
 
 //returns latitudes and longitudes of an item
@@ -66,6 +73,7 @@ async function findDistances(address, MarkerArray){
     };
 
     console.log(request);
+
     
     // get distance matrix response
     await service.getDistanceMatrix(request).then((response) => {
@@ -189,7 +197,6 @@ async function initMap() {
             return;
         } else {
             address = places[0].formatted_address;
-            document.getElementById("addressHere").innerHTML = address;
 
             codeAddress(address, marker);
 

@@ -67,7 +67,7 @@ async function findDistances(address, MarkerArray){
         origins: [address],
         destinations: MarkerArray.map(getLatsAndLongs),
         travelMode: google.maps.TravelMode.DRIVING,
-        unitSystem: google.maps.UnitSystem.METRIC,
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
         avoidHighways: false,
         avoidTolls: false,
     };
@@ -79,10 +79,11 @@ async function findDistances(address, MarkerArray){
     await service.getDistanceMatrix(request).then((response) => {
         console.log(response);
         for(let i=0; i<MarkerArray.length; i++){
-            MarkerArray[i].distance = response.rows[0].elements[i].duration.value;
+            MarkerArray[i].id = response.rows[0].elements[i].duration.value;
+            MarkerArray[i].distance = response.rows[0].elements[i].distance.text;
             MarkerArray[i].travelTime = response.rows[0].elements[i].duration.text;
         }
-        MarkerArray.sort(function(a,b){return a.distance - b.distance})
+        MarkerArray.sort(function(a,b){return a.id - b.id})
     });
 
     fillClosestLocationsTable(MarkerArray);

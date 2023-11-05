@@ -6,7 +6,7 @@ body{
     height: 400px;
     width: 700px;
     justify-content: center;
-    margin-top: 11%;
+    margin-top: 2%;
     margin-left: 10%;
     margin-right: 5%;
     border-radius: 10px;
@@ -26,7 +26,7 @@ table, td, th{
 }
 
 th{
-    background-color: #BF754B;
+    background-color: #9FBEC1;
 }
 
 th:first-child, td:first-child {
@@ -55,10 +55,12 @@ th:last-child, td:last-child {
     margin-right: auto;
     margin-left: auto;
     padding: 10px;
-    width:70%;
-    margin:20px;
-    border-radius: 5px;
-    border: 1px solid gray
+    width: 50%;
+    margin-top: 1%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #BF754B;
 }
 
 .head-label{
@@ -73,5 +75,26 @@ nav{
 .favicon{
     width: 2%;
     padding: 10px;
+    display: inline-block; /* Make the image inline */
+    vertical-align: middle;
+}
+
+.search-container{
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border-color: #BF754B;
+}
+
+.nav-button-container{
+    display: inline-block; /* Make the button container inline */
+    vertical-align: middle; /* Align it vertically */
+    margin-left: 10px;
+}
+
+#nav-button{
+    text-decoration: none;
+    background-color: #9FBEC1;
+    font-size: 16px;
 }
   

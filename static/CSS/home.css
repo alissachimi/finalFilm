@@ -1,9 +1,11 @@
 body{
-    background-image: url("/static/images/HomeBackground.jpg");
+    background-color: rgb(252, 249, 244);
+    background-image: url("");
     text-align: center;
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
+    overflow-x: hidden;
 }
 
 h1{
@@ -74,16 +76,18 @@ button:active{
 .slogan{
     align-items: center;
     text-align: center;
+    color:rgb(83, 83, 83);
 }
 
 #container{
     border: 10px solid hsl(170, 14%, 60%);
     width: 85%;
     margin-left: 7%;
-    height: 50vh;
+    padding: 20px;
     border-radius: 20px;
     margin-top: -3%;
-    background: floralwhite;
+
+}
 
 nav{
     background-color: #d6785671;

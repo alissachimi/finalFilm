@@ -23,4 +23,4 @@ function redirectToMaps(){
 
   window.location.href = '/maps?location=' + searchQuery;
 }
-  
+

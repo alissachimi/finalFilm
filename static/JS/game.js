@@ -77,6 +77,9 @@ function getNewMovie(){
   $('#actorHint').text("Lead Actor");
   $('#genreHint').text("Genre");
   $('#yearHint').text("Release Year");
+  $('#actorHint').css("color", "black");
+  $('#genreHint').css("color", "black");
+  $('#yearHint').css("color", "black");
   attempt = 1;
   document.getElementById("quote").innerHTML = movie.quote;
 }
@@ -157,8 +160,8 @@ input.addEventListener("keyup", function(event) {
             if (attempt > 3){
               lingerRed();
               getNewMovie();
-              questionNumber++;
               updatePercentCorrect((numberCorrect/questionNumber)*100);
+              questionNumber++;
               updateQuestionNumber(questionNumber);
 
             }

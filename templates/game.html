@@ -54,10 +54,25 @@
 
     </div>
     <center>
-    <button onclick="getNewMovie()" style="position: absolute; top: 10px; left: 150px">reset</button>
-    <div class="howToMessageBackground">
-      <div class="howToMessageFront">
-        <p>hi</p>
+    <div class="howToMessageBackground" id="howToMessageBackground">
+      <div class="howToMessageFront" id="howToMessageFront">
+        <p id="closeButton" onclick="document.getElementById('howToMessageBackground').style.display='none'"><b>&#1093;</b></p>
+        <h2>Add title here</h2>
+        <p>add directions here</p>
+        <p>add a final pun</p>
+        <button onclick="document.getElementById('howToMessageBackground').style.display='none'">Start!</button>
+      </div>
+    </div>
+  </center>
+
+  <center>
+    <div class="winMessageBackground" id="winMessageBackground">
+      <div class="winMessageFront" id="winMessageFront">
+        <h2>Congratulations!</h2>
+        <h4>Score: <span id="winScore"></span></h4>
+        <h4>Percent Correct: <span id="winPercent"></span></h4>
+        <button onclick="resetGame()">Play Again</button>
+        <button onclick="window.location='/'">Go Home</button>
       </div>
     </div>
   </center>

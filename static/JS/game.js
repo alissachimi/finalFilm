@@ -1,9 +1,12 @@
+//connects to google maps api
 window.addEventListener('load',function(){
   var script = document.createElement('script');
   script.type = 'text/javascript';
   script.src= 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCr_GiC_sLRJi7Urje8rqN5TJ-z_n8SVJQ&callback=initialize&v=weekly'
   document.body.appendChild(script);
 });
+
+let currentStep = 1;
 
 let panorama;
 let currentArrayIndex = 0;
@@ -66,6 +69,9 @@ window.initialize = initialize;
 //gets it correct
 function getNewMovie(){
   currentArrayIndex++;
+  if(currentArrayIndex === MovieArray.length - 1){
+    currentArrayIndex=0;
+  }
   movie = MovieArray[currentArrayIndex];
   panorama.setPosition(movie.location);
   $('#actorHint').text("Lead Actor");
@@ -154,10 +160,12 @@ input.addEventListener("keyup", function(event) {
             }
         }
         else {
+            incrementStep();
             addCorrectPoints();
             getNewMovie();
             numberCorrect++;
             updatePercentCorrect((numberCorrect/questionNumber)*100);
+            checkWin();
             questionNumber++;
             updateQuestionNumber(questionNumber);
         }
@@ -192,6 +200,34 @@ function updateQuestionNumber(questionNumber){
 
 function updatePercentCorrect(percent){
   percentcorrect.textContent = percent.toFixed(1) + '%';
+}
+
+function incrementStep(){
+  currentStep++;
+  document.getElementById("progressImg").src="/static/images/GameFootsteps-0" + currentStep + ".svg";
+}
+
+function checkWin(){
+  if(currentStep==7){
+    document.getElementById("winMessageBackground").style.display="block";
+    document.getElementById("winMessageFront").style.display="block";
+    document.getElementById("winScore").innerHTML = score;
+    document.getElementById("winPercent").innerHTML = (numberCorrect/questionNumber*100).toFixed(2) + '%';
+  }
+}
+
+function resetGame(){
+  currentStep=1;
+  document.getElementById("progressImg").src="/static/images/GameFootsteps-0" + currentStep + ".svg";
+  score = 0;
+  numberCorrect = 0;
+  questionNumber=1;
+  document.getElementById("winMessageBackground").style.display="none";
+  document.getElementById("winMessageFront").style.display="none";
+  updateScore(score);
+  updateQuestionNumber(questionNumber);
+  updatePercentCorrect(0);
+
 }
 
 

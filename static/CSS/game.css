@@ -4,6 +4,10 @@ body {
   justify-content: center;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 h1 {
   font-family: 'Roboto Mono', monospace;
   text-align: center;
@@ -127,7 +131,7 @@ form {
   border:1px solid #a6482691;
 }
 
-.howToMessageBackground{
+.winMessageBackground{
   position: absolute;
   top: 0;
   left: 0;
@@ -140,12 +144,46 @@ form {
   display:none;
 }
 
+.howToMessageBackground{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.455);
+  z-index: 1;
+  margin: 0;
+  overflow-x: hidden;
+  display:block;
+}
+
 .howToMessageFront{
   position: relative;
-  background-color: white;
+  background-color: rgb(255, 248, 247);
   width: 50%;
   padding: 30px;
   margin-top: 50px;
+  border: 5px outset #732a1a3a;
+  font-family: 'Roboto Mono', monospace;
+  display: block;
+}
+
+#closeButton{
+  position: absolute;
+  top: 0;
+  right: 20px;
+  cursor: pointer;
+}
+
+.winMessageFront{
+  position: relative;
+  background-color: rgb(255, 248, 247);
+  width: 50%;
+  padding: 30px;
+  margin-top: 50px;
+  border: 5px outset #732a1a3a;
+  font-family: 'Roboto Mono', monospace;
+
 }
 
 input{

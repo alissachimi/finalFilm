@@ -153,14 +153,18 @@ input.addEventListener("keyup", function(event) {
             displayIncorrectPopup();
             attempt++;
             subtractBadGuessPoints();
+            flashRed();
             if (attempt > 3){
+              lingerRed();
               getNewMovie();
               questionNumber++;
               updatePercentCorrect((numberCorrect/questionNumber)*100);
               updateQuestionNumber(questionNumber);
+
             }
         }
         else {
+            flashGreen();
             incrementStep();
             addCorrectPoints();
             getNewMovie();
@@ -238,4 +242,23 @@ function resetGame(){
 
 }
 
+async function flashRed(){
+  document.body.style.backgroundColor = "#A64826";
+  await new Promise(resolve => setTimeout(resolve, 500));
+  document.body.style.backgroundColor = 'floralwhite';
+}
+
+async function lingerRed(){
+
+  document.body.style.backgroundColor = "#A64826";
+  await new Promise(resolve => setTimeout(resolve, 2000));
+  document.body.style.backgroundColor = 'floralwhite';
+}
+
+async function flashGreen(){
+
+  document.body.style.backgroundColor = "#9FBEC1";
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  document.body.style.backgroundColor = 'floralwhite';
+}
 

@@ -19,6 +19,7 @@ table, td, th{
     padding: 10px;
     border-collapse: collapse;
     width: 70%;
+    font-family: 'Roboto Mono', monospace;
 
     /* border: 1px solid black; */
     /* background-color: transparent; */
@@ -66,6 +67,7 @@ th:last-child, td:last-child {
 .head-label{
     margin-bottom: -2%;
     margin-left: 1%;
+    font-family: 'Roboto Mono', monospace;
 }
 
 nav{
@@ -74,7 +76,7 @@ nav{
 
 .favicon{
     width: 2%;
-    padding: 10px;
+    padding: 7px;
     display: inline-block; /* Make the image inline */
     vertical-align: middle;
 }
@@ -96,5 +98,33 @@ nav{
     text-decoration: none;
     background-color: #9FBEC1;
     font-size: 16px;
+}
+
+li{
+    display: inline;
+    padding: 5px;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+}
+
+ul{
+    display: inline;
+    margin-left: -40px;
+    list-style-type: none;
+}
+
+li a {
+    display: inline;
+    color: white;
+    text-align: center;
+    padding-top: 11px;
+    padding-bottom: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-decoration: none;
+}
+
+li a:hover{
+    background-color: #ffb093e6;
 }
   

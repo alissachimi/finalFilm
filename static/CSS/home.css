@@ -13,6 +13,11 @@ h1{
     text-shadow: 1px 1px 2px #BF754B;
 }
 
+h2{
+    font-family: 'Roboto Mono', monospace;
+    color: #244a4a;
+}
+
 button{
     border-radius: 10px;
     padding: 10px 20px;
@@ -27,6 +32,7 @@ button{
     flex: 1 1 auto;
     transition: 0.5s;
     background-size: 200% auto;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .button-go{
@@ -34,6 +40,7 @@ button{
     color: #fff;
     border: none;
     cursor: pointer;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .gif{
@@ -90,12 +97,42 @@ button:active{
 }
 
 nav{
-    background-color: #d6785671;
+    background-color: #d67856e6;
 }
 
 .favicon{
     width: 2%;
-    padding: 10px;
+    padding: 7px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+li{
+    display: inline;
+    padding: 5px;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+}
+
+ul{
+    display: inline;
+    margin-left: -40px;
+    list-style-type: none;
+}
+
+li a {
+    display: inline;
+    color: white;
+    text-align: center;
+    padding-top: 11px;
+    padding-bottom: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-decoration: none;
+}
+
+li a:hover{
+    background-color: #ffb093e6;
 }
   
   

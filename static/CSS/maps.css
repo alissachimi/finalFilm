@@ -1,5 +1,7 @@
 body{
     background-image: url("/static/images/Slide1.JPG");
+    font-family: 'Roboto Mono', monospace;
+
 }
 
 #map {

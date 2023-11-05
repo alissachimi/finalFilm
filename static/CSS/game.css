@@ -151,3 +151,9 @@ form {
   padding: 30px;
   margin-top: 50px;
 }
+
+.footprintImage{
+  margin-top: 20px;
+  height: 50%;
+  width:70%;
+}

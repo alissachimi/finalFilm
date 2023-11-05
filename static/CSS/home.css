@@ -1,10 +1,10 @@
 body{
-    background-color: rgb(252, 249, 244);
-    background-image: url("");
     text-align: center;
+    background-color: rgb(252, 249, 244);
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
+    overflow-x: hidden;
 }
 
 button{
@@ -70,15 +70,19 @@ button:active{
 .slogan{
     align-items: center;
     text-align: center;
+    color:rgb(83, 83, 83);
 }
 
 #container{
     border: 10px solid #8ba8a3;
     width: 85%;
     margin-left: 7%;
-    height: 50vh;
+    padding: 20px;
     border-radius: 20px;
     margin-top: -3%;
+    background-color: rgb(252, 249, 244);
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 10px;
 
 }
 

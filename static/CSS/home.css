@@ -1,5 +1,6 @@
 body{
     background-color: rgb(252, 249, 244);
+    background-image: url("");
     text-align: center;
     justify-content: center;
     margin-right: auto;
@@ -69,6 +70,25 @@ button:active{
 .slogan{
     align-items: center;
     text-align: center;
+}
+
+#container{
+    border: 10px solid #8ba8a3;
+    width: 85%;
+    margin-left: 7%;
+    height: 50vh;
+    border-radius: 20px;
+    margin-top: -3%;
+
+}
+
+nav{
+    background-color: #d6785671;
+}
+
+.favicon{
+    width: 2%;
+    padding: 10px;
 }
   
   
